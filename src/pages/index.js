@@ -31,20 +31,12 @@ class BlogIndex extends React.Component {
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
-            <div key={node.fields.slug}>
+            <div key={node.fields.slug} style={{borderBottom: '1px dotted #ddd', padding: '.5rem 0'}}>
               <h3 className="post-title">
                 <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
                   {title}
                 </Link>
               </h3>
-              <small>Date: {node.frontmatter.date} | Category: <Link
-              style={{ textDecoration: "none" }}
-              to={`/categories/${_.kebabCase(node.frontmatter.category)}`}
-              >
-              {node.frontmatter.category}
-            </Link></small>
-              <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-              <hr/>
             </div>
           )
         })}
