@@ -3,7 +3,7 @@ module.exports = {
   siteMetadata: {
     title: `Chung Tran`,
     description: `Blog của Chung Tran`,
-    author: `@anhchungite`,
+    author: `@chungtran4078`,
     image: `https://avatars1.githubusercontent.com/u/28822504?s=400&v=4`
   },
   plugins: [
@@ -65,8 +65,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `anhchungite-github-io`,
-        short_name: `anhchungite`,
+        name: `chungtran4078-github-io`,
+        short_name: `chungtran4078-blog`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
