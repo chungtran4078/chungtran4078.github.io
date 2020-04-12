@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://chungtran4078.github.io/sitemap.xml
+Host: https://chungtran4078.github.io
