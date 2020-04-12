@@ -1,6 +1,7 @@
 module.exports = {
   pathPrefix: `/blog`,
   siteMetadata: {
+    siteUrl: `https://chungtran4078.github.io`,
     title: `Chung Tran`,
     description: `Blog của Chung Tran`,
     author: `@chungtran4078`,
@@ -74,6 +75,13 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        policy: [{ userAgent: '*', allow: '/' }]
+      },
+    },
+    'gatsby-plugin-sitemap',
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
