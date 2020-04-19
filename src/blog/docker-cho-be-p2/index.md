@@ -24,7 +24,7 @@ Trong thư mục chứa project mình có các file/folder như sau:
 Giờ sẽ lần lượt đi viết những file này.
 
 ### Dockerfile
-```
+```bash
 FROM ubuntu:16.04
 
 RUN DEBIAN_FRONTEND=noninteractive
@@ -112,7 +112,7 @@ Vào trình duyệt truy cập __localhost:9000__ xem có gì nhé.
 Nếu bạn để ý cú pháp Dockerfile thì sẽ phát hiện __FROM ubuntu:16.04__ thực chất là chúng ta đang mở rộng image __ubuntu:16.04__ bằng việc cài thêm apache, php, mysql.
 
 Như vậy việc mở rộng 1 image dựa trên image đã có cũng thực hiện tương tự.
-```
+```bash
 FROM lamp-image
 RUN apt-get install -y vim
 ```

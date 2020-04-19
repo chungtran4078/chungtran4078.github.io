@@ -32,7 +32,7 @@ Sau khi pass các điều kiện trên thì bắt đầu thôi, config 1 chút t
 __Trên Test server:__
 
 Run thần chú `sudo vi /etc/nginx/sites-available/default` để mở file config nginx và cập nhật lại như sau:
-```
+```bash
 server {
     listen 80;
 

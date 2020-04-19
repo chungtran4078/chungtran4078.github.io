@@ -31,7 +31,7 @@ docker-compose -v
 Trước tiên phải xác định các container sẽ sử dụng trong project. Ví dụ dự án mình là dự án php cần có 1 máy chạy source code và 1 máy để chạy mysql. Vậy là mình cần có 2 container.
 
 Như vậy nội dung file __docker-compose.yml__ cho project của mình về cơ bản sẽ như sau:
-```
+```bash
 version: '3.5'
 services:
     php-apache:
@@ -63,7 +63,7 @@ services:
             - ./db/log:/var/log/mysql
 ```
 Và nội dung của __Dockerfile__ như sau:
-```
+```bash
 FROM php:7.3-apache
 #https://hub.docker.com/_/php
 LABEL maintainer="ChungTran<chungtran4078@gmail.com>"
@@ -73,7 +73,7 @@ RUN apt-get update && apt-get install -y vim
 ```
 #### ** Giải thích chút:
 Cấu trúc file __docker-compose.yml__ của mình ở trên như sau:
-```
+```bash
 version: '3.5'
 services:
     php-apache:
@@ -83,14 +83,14 @@ services:
 ```
 - Mỗi container là một _service_, ở đây mình có 2 service có tên _php-apache_ và _mysql_ (tên này do mình tự đặt nha)
 
-```
+```bash
 php-apache:
         build: .
 ```
 Chỗ này là lý do có file __Dockerfile__ ở trên. Do mình muốn cài đặt thêm một số thành phần nên mình sẽ chạy service này với image build từ __Dockerfile__. 
 
 Hiện tại file __Dockerfile__ đang ở cùng cấp với file __docker-compose.yml__ nên mình để `build: .` nha, nếu __Dockerfile__ nằm thư mục khác, VD _docker_ thì:
-```
+```bash
 build:
     context: ./docker
 ```
