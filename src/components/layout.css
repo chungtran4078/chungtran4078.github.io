@@ -541,7 +541,7 @@ code {
   padding-bottom: 0.2em;
 }
 :not(pre) > code[class*="language-"] {
-  padding: .2em;
+  padding: .15em;
   border-radius: .2em;
 }
 pre code {
@@ -563,6 +563,14 @@ pre code:after,
 pre tt:before,
 pre tt:after {
   content: '';
+}
+:not(pre) > code[class*="language-text"],
+pre[class*="language-text"] {
+	background: #f1f1f1;
+}
+code[class*="language-text"],
+pre[class*="language-text"] {
+	color: inherit;
 }
 @media only screen and (max-width: 480px) {
   html {
@@ -596,6 +604,10 @@ footer {
 }
 .post-meta {
   margin-bottom: 5px;
+}
+
+.post-content p{
+  line-height: 1.8;
 }
 
 .post-content h2{

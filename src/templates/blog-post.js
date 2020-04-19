@@ -14,7 +14,7 @@ class BlogPostTemplate extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO title={post.frontmatter.title} description={post.excerpt} />
+        <SEO title={post.frontmatter.title} description={post.excerpt} image={post.frontmatter.image ? post.frontmatter.image.childImageSharp.sizes.src : null}/>
         <div className="post-meta">
           <h1 className="post-title">{post.frontmatter.title}</h1>
           <small>Date: {post.frontmatter.date} | Category: <Link
@@ -71,6 +71,13 @@ export const pageQuery = graphql`
         date(formatString: "YYYY-MM-DD")
         category
         tags
+        image {
+          childImageSharp {
+            sizes(maxWidth: 630) {
+              ...GatsbyImageSharpSizes
+            }
+          }
+        }
       }
     }
   }
