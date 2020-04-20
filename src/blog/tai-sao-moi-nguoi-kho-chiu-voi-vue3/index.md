@@ -13,18 +13,19 @@ Nghe có vẻ nó đang được cộng đồng Vue háo hức, hóng hớt, hă
 
 Nhưng không, Vue 3 tạo nên 1 cuộc tranh cãi dữ dội trên Hacker News, Reddit khi Evan You release RFC (Request for Comment) cho cách viết Component mới gọi là Function-based.
 
->Có thể bạn biết rồi: RFC là cách để nhà phát triển tham khảo ý kiến của cộng đồng. Khi họ muốn đưa ra một tính năng mới chẳng hạn, họ muốn bạn nói lên ý kiến ​​của mình về tính năng đó.
+*__**Có thể bạn biết rồi:__ RFC là cách để nhà phát triển tham khảo ý kiến của cộng đồng. Khi họ muốn đưa ra một tính năng mới chẳng hạn, họ muốn bạn nói lên ý kiến ​​của mình về tính năng đó.*
 
 Và một số người đã bày tỏ sự phẫn nộ, văng tục, chửi thề không khác gì trẩu VN.
 
 Vậy cái the hell gì đã khiến mọi người phản ứng dữ dội như vậy?
 
-Mình sẽ dịch một bài viết rất hay của thanh niên Alex Kyriakidis: [Why people got upset with Vue 3](https://vueschool.io/articles/news/why-people-are-mad-with-vue-3/)
+Và mình đã tìm được một bài viết rất hay của thanh niên *Alex Kyriakidis: [Why people got upset with Vue 3](https://vueschool.io/articles/news/why-people-are-mad-with-vue-3/)*. Mình sẽ dịch nó để cùng mọi người hiểu rõ câu chuyện.
 
 
 ##<center>Tại sao mọi người khó chịu với Vue 3</center>
 <center>- Alex Kyriakidis -</center>
 <br/>
+
 Thứ high, tôi thức dậy và thấy rất nhiều người đang tweet về một số tính năng mới của Vue 3. Tôi rất phấn khích và xem tweet này từ Evan You, ổng là người tạo ra Vue đó, trường hợp bạn không biết.
 
 https://twitter.com/youyuxi/status/1142280533168119808
@@ -92,42 +93,42 @@ Tôi quay trở lại máy tính và tiếp tục đọc [rendered version of th
 ####Standard API
 ```js
 <template>
-    <div>
-        <template v-if="isLoading">Loading...</template>
-        <template v-else>
-            <h3>{{ post.title }}</h3>
-            <p>{{ post.body }}</p>
-        </template>
-    </div>
+  <div>
+    <template v-if="isLoading">Loading...</template>
+    <template v-else>
+      <h3>{{ post.title }}</h3>
+      <p>{{ post.body }}</p>
+    </template>
+  </div>
 </template>
 
 <script>
-    import { fetchPost } from './api'
+  import { fetchPost } from './api'
 
-    export default {
-        props: {
-            id: Number
-        },
-        data() {
-            return {
-                isLoading: true,
-                post: null
-            }
-        },
-        mounted() {
-            this.fetchPost()
-        },
-        watch: {
-            id: 'fetchPost'
-        },
-        methods: {
-            async fetchPost() {
-                this.isLoading = true
-                this.post = await fetchPost(this.id)
-                this.isLoading = false
-            }
-        }
+  export default {
+    props: {
+      id: Number
+    },
+    data() {
+      return {
+        isLoading: true,
+        post: null
+      }
+    },
+    mounted() {
+      this.fetchPost()
+    },
+    watch: {
+      id: 'fetchPost'
+    },
+    methods: {
+      async fetchPost() {
+        this.isLoading = true
+        this.post = await fetchPost(this.id)
+        this.isLoading = false
+      }
     }
+  }
 </script>
 ```
 
@@ -138,36 +139,36 @@ Tôi quay trở lại máy tính và tiếp tục đọc [rendered version of th
 
 ```js
 <template>
-    <div>
-        <template v-if="isLoading">Loading...</template>
-        <template v-else>
-            <h3>{{ post.title }}</h3>
-            <p>{{ post.body }}</p>
-        </template>
-        </div>
+  <div>
+    <template v-if="isLoading">Loading...</template>
+    <template v-else>
+      <h3>{{ post.title }}</h3>
+      <p>{{ post.body }}</p>
+    </template>
+  </div>
 </template>
 
 <script>
-import { value, watch } from 'vue'
-import { fetchPost } from './api'
+  import { value, watch } from 'vue'
+  import { fetchPost } from './api'
 
-export default {
+  export default {
     setup(props) {
-        const isLoading = value(true)
-        const post = value(null)
+      const isLoading = value(true)
+      const post = value(null)
 
-        watch(() => props.id, async (id) => {
-            isLoading.value = true
-            post.value = await fetchPost(id)
-            isLoading.value = false
-        })
+      watch(() => props.id, async (id) => {
+        isLoading.value = true
+        post.value = await fetchPost(id)
+        isLoading.value = false
+      })
 
-        return {
-            isLoading,
-            post
-        }
+      return {
+        isLoading,
+        post
+      }
     }
-}
+  }
 </script>
 ```
 Điều ngạc nhiên đầu tiên ở đây là độ dài của mã. Tôi rõ ràng mong đợi Function-based API sẽ có nhiều dòng hơn Object-based API truyền thống. Object-based 40 dòng so với Function-based 32 dòng. :ok_hand:
@@ -181,41 +182,41 @@ import { value, watch } from 'vue'
 import { fetchPost } from './api'
 
 export default {
-    setup(props) {
-    const isLoading = value(true)
-    const post = value(null)
-        //....
-    }
+  setup(props) {
+  const isLoading = value(true)
+  const post = value(null)
+      //....
+  }
 }
 ```
 
 Sau đó, function `watch` lắng nghe những thay đổi trong `props.id` và nó thực hiện call AJAX mỗi khi `id` thay đổi.
 ```js
 watch(() => props.id, async (id) => {
-    isLoading.value = true
-    post.value = await fetchPost(id)
-    isLoading.value = false
+  isLoading.value = true
+  post.value = await fetchPost(id)
+  isLoading.value = false
 })
 ```
 
 Cuối cùng, `setup` trả về một object có các reactive state, giống như method `data`.
 ```js
 export default {
-    setup(props) {
-        const isLoading = value(true)
-        const post = value(null)
+  setup(props) {
+    const isLoading = value(true)
+    const post = value(null)
 
-        watch(() => props.id, async (id) => {
-            isLoading.value = true
-            post.value = await fetchPost(id)
-            isLoading.value = false
-        })
+    watch(() => props.id, async (id) => {
+      isLoading.value = true
+      post.value = await fetchPost(id)
+      isLoading.value = false
+    })
 
-        return {
-            isLoading,
-            post
-        }
+    return {
+      isLoading,
+      post
     }
+  }
 }
 ```
 
@@ -223,29 +224,29 @@ export default {
 
 ```js
 function useMouse() {
-    const x = value(0)
-    const y = value(0)
-    const update = e => {
-        x.value = e.pageX
-        y.value = e.pageY
-    }
-    onMounted(() => {
-        window.addEventListener('mousemove', update)
-    })
-    onUnmounted(() => {
-        window.removeEventListener('mousemove', update)
-    })
-    return { x, y }
+  const x = value(0)
+  const y = value(0)
+  const update = e => {
+    x.value = e.pageX
+    y.value = e.pageY
+  }
+  onMounted(() => {
+    window.addEventListener('mousemove', update)
+  })
+  onUnmounted(() => {
+    window.removeEventListener('mousemove', update)
+  })
+  return { x, y }
 }
 
 // in consuming component
 const Component = {
-    setup() {
-        const { x, y } = useMouse()
-        const { z } = useOtherLogic()
-        return { x, y, z }
-    },
-    template: <div>{{ x }} {{ y }} {{ z }}</div>
+  setup() {
+    const { x, y } = useMouse()
+    const { z } = useOtherLogic()
+    return { x, y, z }
+  },
+  template: <div>{{ x }} {{ y }} {{ z }}</div>
 }
 ```
 
@@ -274,7 +275,7 @@ Nếu bạn không thích nó, không sao cả. Hãy đọc đề xuất và xem
 ###This is not Set in stone
 >Đây là RFC (Request for Comments) - miễn là pull request này vẫn mở, đây chỉ là một đề xuất để lấy ý kiến ​​phản hồi. Chúng tôi khuyến khích bạn nói lên ý kiến ​​của mình, nhưng thực sự vui lòng đọc RFC chính thức trước khi bình luận, vì thông tin bạn nhận được từ một luồng Reddit / HN có thể không đầy đủ, lỗi thời hoặc hoàn toàn sai lệch.
 
-__**This is not Set in stone__: Điều này có thể thay đổi. Ý tác giả muốn nói RFC chỉ là tham khảo, nó không phải là quyết định cuối cùng.
+*__**This is not Set in stone__: Điều này có thể thay đổi. Ý tác giả muốn nói RFC chỉ là tham khảo, nó không phải là quyết định cuối cùng.*
 
 ###Closing
 Túm cái váy lại, Object-based API rất là "đáng yêu", do đó tôi dễ hiểu lý do tại sao rất nhiều người đã tức giận khi nghĩ phải thay đổi. Một điều đáng chú ý nữa là do nhiều người không đọc RFC đầy đủ hoặc đọc lướt qua các tiêu đề trên Reddit và những thông tin sai lệch, không rõ ràng đó khiến họ hét lên trên Twitter hoặc troll trên GitHub (Ta hay gọi là tay nhanh hơn não đó). __RFC tuyên bố rằng Object-based API sẽ vẫn ở đây, trên Vue 3__.
@@ -282,6 +283,8 @@ Túm cái váy lại, Object-based API rất là "đáng yêu", do đó tôi d�
 Tôi không thể chờ đợi Function-based API được hoàn thiện và phát hành và đưa tất cả vào hoạt động. Tôi chắc rằng tất cả các nhóm mà tôi đang tư vấn họ sẽ rất hào hứng khi có được siêu năng lực mới này trong tay. :rocket:
 
 __Đừng ngạc nhiên bởi Vue 3!__ [Đăng ký Vue School](https://vueschool.io/) để trở thành người đầu tiên nhận được khóa học [Vue 3 chuyên sâu](https://vueschool.io/courses/the-vuejs-3-master-class) sắp tới của chúng tôi trên phiên bản mới nhất của Vue.js. Trong thời gian đó, nếu bạn đang tìm kiếm [Advanced Reusable Component Patterns](https://vueschool.io/courses/reusable-vuejs-component-patterns), hãy đảm bảo theo dõi [khóa học của chúng tôi](https://www.notion.so/vueschool/Vue-3-Function-based-Component-API-for-the-salvation-3078d1af3c674bb9a5837032110bc05e#9fe2fa6828854eeeb1273c6bdbb87b0b) để được thông báo khi nó được ra mắt.
+
+<center>-- The End --</center>
 
 ##Ý kiến cá nhân
 
