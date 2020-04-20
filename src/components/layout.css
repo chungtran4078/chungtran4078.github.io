@@ -5,6 +5,7 @@ html {
 }
 body {
   margin: 0;
+  font-size: 1.1rem;
 }
 article,
 aside,
@@ -615,11 +616,8 @@ code:after,
 tt:before,
 tt:after {
   letter-spacing: -0.2em;
-  content: ' ';
 }
-code:after {
-  content: '';
-}
+
 pre code:before,
 pre code:after,
 pre tt:before,
@@ -629,6 +627,10 @@ pre tt:after {
 :not(pre) > code[class*="language-text"] {
   background: #f1f1f1;
   color: inherit;
+}
+
+code[class*="language-"], pre[class*="language-"] {
+  font-size: .9rem;
 }
 
 .gatsby-highlight-code-line {
