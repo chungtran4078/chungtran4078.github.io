@@ -557,7 +557,10 @@ footer {
 }
 
 .post-title {
-  margin-bottom: 0
+  margin-bottom: 0;
+}
+h3.post-title {
+  font-size: 1.2em;
 }
 .post-tag-container {
   margin: 10px 0;
