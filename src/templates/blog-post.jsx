@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import _ from "lodash";
 import Layout from '../components/layout'
-import SEO from '../components/seo'
+import Seo from '../components/seo'
 import Tags from '../components/Tags'
 
 class BlogPostTemplate extends React.Component {
@@ -14,7 +14,7 @@ class BlogPostTemplate extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO title={post.frontmatter.title} description={post.excerpt} image={post.frontmatter.image ? post.frontmatter.image.childImageSharp.sizes.src : null}/>
+        <Seo title={post.frontmatter.title} description={post.excerpt} image={post.frontmatter.image ? post.frontmatter.image.childImageSharp.sizes.src : null}/>
         <div className="post-meta">
           <h1 className="post-title">{post.frontmatter.title}</h1>
           <small>Date: {post.frontmatter.date} | Category: <Link
@@ -75,8 +75,8 @@ export const pageQuery = graphql`
         tags
         image {
           childImageSharp {
-            sizes(maxWidth: 630) {
-              ...GatsbyImageSharpSizes
+            fluid(maxWidth: 630) {
+              ...GatsbyImageSharpFluid_tracedSVG
             }
           }
         }

@@ -2,21 +2,21 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import _ from "lodash";
 import Layout from '../components/layout'
-import SEO from '../components/seo'
+import Seo from '../components/seo'
 
-class TagTemplate extends React.Component {
+class CategoryTemplate extends React.Component {
   render() {
-    const { tag } = this.props.pageContext
+    const { category } = this.props.pageContext
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
     const posts = data.allMarkdownRemark.edges
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO
-          title={`Posts in tag "${tag}"`}
+        <Seo
+          title={`Posts in category "${category}"`}
         />
-        <h2>Tags: {tag}</h2>
+        <h2>Category: {category}</h2>
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
@@ -42,10 +42,10 @@ class TagTemplate extends React.Component {
   }
 }
 
-export default TagTemplate
+export default CategoryTemplate
 
 export const pageQuery = graphql`
-  query TagPage($tag: String) {
+  query CategoryPage($category: String) {
     site {
       siteMetadata {
         title
@@ -53,7 +53,7 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
         sort: { fields: [frontmatter___date], order: DESC }
-        filter: { frontmatter: { tags: { in: [$tag] } } }
+        filter: { frontmatter: { category: { eq: $category } } }
         ) {
       edges {
         node {
@@ -65,7 +65,6 @@ export const pageQuery = graphql`
             date(formatString: "YYYY-MM-DD")
             title
             category
-            tags
           }
         }
       }
