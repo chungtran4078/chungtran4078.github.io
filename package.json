@@ -53,6 +53,6 @@
     "styled-components": "^5.3.0"
   },
   "resolutions": {
-    "babel-plugin-remove-graphql-queries": "2.9.14"
+    "babel-plugin-remove-graphql-queries": "3.12.0"
   }
 }
