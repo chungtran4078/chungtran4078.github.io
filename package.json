@@ -16,6 +16,7 @@
     "gatsby-plugin-robots-txt": "^1.5.0",
     "gatsby-plugin-sharp": "^3.11.0",
     "gatsby-plugin-sitemap": "^4.7.0",
+    "gatsby-plugin-typescript": "^3.11.0",
     "gatsby-remark-copy-linked-files": "^4.8.0",
     "gatsby-remark-emojis": "^0.4.2",
     "gatsby-remark-external-links": "^0.0.4",
@@ -32,16 +33,26 @@
     "prop-types": "^15.6.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-helmet": "^6.1.0"
+    "react-helmet": "^6.1.0",
+    "typescript": "^4.3.5"
   },
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
     "start": "npm run develop",
-    "format": "prettier --write \"src/**/*.js\""
+    "format": "prettier --write \"src/**/*.js\"",
+    "clean": "gatsby clean"
   },
   "devDependencies": {
-    "prettier": "^2.3.2"
+    "@types/node": "^16.6.1",
+    "@types/react": "^17.0.17",
+    "@types/react-dom": "^17.0.9",
+    "@types/react-helmet": "^6.1.2",
+    "prettier": "^2.3.2",
+    "styled-components": "^5.3.0"
+  },
+  "resolutions": {
+    "babel-plugin-remove-graphql-queries": "2.9.14"
   }
 }

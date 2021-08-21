@@ -1,20 +1,64 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 import _ from "lodash";
-import Layout from '../components/layout'
-import Seo from '../components/seo'
+import { getSrc } from "gatsby-plugin-image"
+import Layout from '../components/Layout'
+import Seo from '../components/Seo'
 import Tags from '../components/Tags'
 
-class BlogPostTemplate extends React.Component {
+type BlogPostProps = {
+  data: {
+    site: {
+      siteMetadata: {
+        title: string
+        description: string
+        author: {
+          name: string
+          url: string
+        }
+      }
+    }
+    markdownRemark: {
+      html: string
+      excerpt: string
+      frontmatter: {
+        tags: string[],
+        title: string,
+        date: string,
+        category: string,
+        image: any,
+      }
+    }
+  },
+  pageContext: {
+    previous: {
+      fields: {
+        slug: string
+      },
+      frontmatter: {
+        title: string
+      }
+    },
+    next: {
+      fields: {
+        slug: string
+      },
+      frontmatter: {
+        title: string
+      }
+    }
+  },
+}
+
+class BlogPostTemplate extends React.Component<BlogPostProps> {
   render() {
     const post = this.props.data.markdownRemark
     
-    const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
-        <Seo title={post.frontmatter.title} description={post.excerpt} image={post.frontmatter.image ? post.frontmatter.image.childImageSharp.sizes.src : null}/>
+      <Layout>
+        <Seo title={post.frontmatter.title} description={post.excerpt} image={getSrc(post.frontmatter.image)}/>
         <div className="post-meta">
           <h1 className="post-title">{post.frontmatter.title}</h1>
           <small>Date: {post.frontmatter.date} | Category: <Link
@@ -75,9 +119,7 @@ export const pageQuery = graphql`
         tags
         image {
           childImageSharp {
-            fluid(maxWidth: 630) {
-              ...GatsbyImageSharpFluid_tracedSVG
-            }
+            gatsbyImageData(width: 630)
           }
         }
       }

@@ -2,7 +2,11 @@ import React, { Component } from "react";
 import _ from "lodash";
 import { Link } from "gatsby";
 
-class Tags extends Component {
+type TagProps = {
+  tags: string[],
+}
+
+class Tags extends Component<TagProps> {
   render() {
     const { tags } = this.props;
     return (

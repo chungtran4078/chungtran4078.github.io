@@ -1,22 +1,44 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 import _ from "lodash";
-import Layout from '../components/layout'
-import Seo from '../components/seo'
+import Layout from '../components/Layout'
+import Seo from '../components/Seo'
 
-class TagTemplate extends React.Component {
+type CategoryTemplateProps = {
+  data: {
+    allMarkdownRemark: {
+      edges: [{
+        node: {
+          excerpt: string,
+          fields: {
+            slug: string
+          },
+          frontmatter: {
+            date: string,
+            title: string,
+            category: string,
+          },
+        }
+      }],
+    },
+  },
+  pageContext: {
+    category: string,
+  },
+}
+
+class CategoryTemplate extends React.Component<CategoryTemplateProps> {
   render() {
-    const { tag } = this.props.pageContext
+    const { category } = this.props.pageContext
     const { data } = this.props
-    const siteTitle = data.site.siteMetadata.title
     const posts = data.allMarkdownRemark.edges
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
+      <Layout>
         <Seo
-          title={`Posts in tag "${tag}"`}
+          title={`Posts in category "${category}"`}
         />
-        <h2>Tags: {tag}</h2>
+        <h2>Category: {category}</h2>
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
@@ -42,10 +64,10 @@ class TagTemplate extends React.Component {
   }
 }
 
-export default TagTemplate
+export default CategoryTemplate
 
 export const pageQuery = graphql`
-  query TagPage($tag: String) {
+  query CategoryPage($category: String) {
     site {
       siteMetadata {
         title
@@ -53,7 +75,7 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
         sort: { fields: [frontmatter___date], order: DESC }
-        filter: { frontmatter: { tags: { in: [$tag] } } }
+        filter: { frontmatter: { category: { eq: $category } } }
         ) {
       edges {
         node {
@@ -65,7 +87,6 @@ export const pageQuery = graphql`
             date(formatString: "YYYY-MM-DD")
             title
             category
-            tags
           }
         }
       }
