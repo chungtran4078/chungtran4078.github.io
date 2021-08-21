@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 4 nguyên tắc cơ bản trong lập trình mà LTV nào cũng phải biết
 date: 2020-04-23
 category: Code

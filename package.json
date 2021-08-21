@@ -8,6 +8,7 @@
     "@weknow/gatsby-remark-twitter": "^0.2.3",
     "gatsby": "^3.11.1",
     "gatsby-image": "^3.11.0",
+    "gatsby-plugin-draft": "^0.2.0",
     "gatsby-plugin-image": "^1.11.0",
     "gatsby-plugin-manifest": "^3.11.0",
     "gatsby-plugin-offline": "^4.11.0",
