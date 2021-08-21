@@ -1,1 +1,5 @@
-{"componentChunkName":"component---src-templates-tag-js","path":"/tags/javascript/","result":{"data":{"site":{"siteMetadata":{"title":"Chung Tran"}},"allMarkdownRemark":{"edges":[{"node":{"excerpt":"Tại thời điểm mình viết bài này thì thanh niên Evan You đã release . Một phiên bản Vue mới cóng, mà theo Evan You thì nó sẽ . Nghe có vẻ nó…","fields":{"slug":"/tai-sao-moi-nguoi-kho-chiu-voi-vue3/"},"frontmatter":{"date":"2020-04-18","title":"Vue 3 drama: Tại sao mọi người khó chịu với Vue 3","category":"Vuejs","tags":["vuejs","javascript"]}}}]}},"pageContext":{"tag":"javascript"}}}
+{
+    "componentChunkName": "component---src-templates-tag-tsx",
+    "path": "/tags/javascript/",
+    "result": {"data":{"site":{"siteMetadata":{"title":"Chung Tran"}},"allMarkdownRemark":{"edges":[{"node":{"excerpt":"Tại thời điểm mình viết bài này thì thanh niên Evan You đã release . Một phiên bản Vue mới cóng, mà theo Evan You thì nó sẽ . Nghe có vẻ nó…","fields":{"slug":"/tai-sao-moi-nguoi-kho-chiu-voi-vue3/"},"frontmatter":{"date":"2020-04-18","title":"Vue 3 drama: Tại sao mọi người khó chịu với Vue 3","category":"Vuejs","tags":["vuejs","javascript"]}}}]}},"pageContext":{"tag":"javascript"}},
+    "staticQueryHashes": ["3649515864","3894061898"]}

@@ -1,1 +1,5 @@
-{"componentChunkName":"component---src-templates-tag-js","path":"/tags/nodejs/","result":{"data":{"site":{"siteMetadata":{"title":"Chung Tran"}},"allMarkdownRemark":{"edges":[{"node":{"excerpt":"Trong tút này chúng ta sẽ thực hiện deploy nodejs app với sơ đồ như sau:\n Đây là sơ đồ hệ thống deploy nodejs đơn giản nhất, tùy vào yêu cầu…","fields":{"slug":"/deploy-nodejs-app-using-nginx-pm2/"},"frontmatter":{"date":"2020-04-08","title":"Deploy Nodejs app sử dụng Nginx + PM2","category":"Nodejs","tags":["linux","nodejs","nginx"]}}}]}},"pageContext":{"tag":"nodejs"}}}
+{
+    "componentChunkName": "component---src-templates-tag-tsx",
+    "path": "/tags/nodejs/",
+    "result": {"data":{"site":{"siteMetadata":{"title":"Chung Tran"}},"allMarkdownRemark":{"edges":[{"node":{"excerpt":"Trong tút này chúng ta sẽ thực hiện deploy nodejs app với sơ đồ như sau:\n Đây là sơ đồ hệ thống deploy nodejs đơn giản nhất, tùy vào yêu cầu…","fields":{"slug":"/deploy-nodejs-app-using-nginx-pm2/"},"frontmatter":{"date":"2020-04-08","title":"Deploy Nodejs app sử dụng Nginx + PM2","category":"Nodejs","tags":["linux","nodejs","nginx"]}}}]}},"pageContext":{"tag":"nodejs"}},
+    "staticQueryHashes": ["3649515864","3894061898"]}

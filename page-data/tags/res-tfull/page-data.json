@@ -1,1 +1,5 @@
-{"componentChunkName":"component---src-templates-tag-js","path":"/tags/res-tfull/","result":{"data":{"site":{"siteMetadata":{"title":"Chung Tran"}},"allMarkdownRemark":{"edges":[{"node":{"excerpt":"RESTful APIs enable you to develop any kind of web application having all possible CRUD (create, retrieve, update, delete) operations…","fields":{"slug":"/put-vs-patch-in-restfull/"},"frontmatter":{"date":"2019-01-12","title":"PUT vs PATCH ?","category":"API","tags":["RESTfull"]}}}]}},"pageContext":{"tag":"RESTfull"}}}
+{
+    "componentChunkName": "component---src-templates-tag-tsx",
+    "path": "/tags/res-tfull/",
+    "result": {"data":{"site":{"siteMetadata":{"title":"Chung Tran"}},"allMarkdownRemark":{"edges":[{"node":{"excerpt":"RESTful APIs enable you to develop any kind of web application having all possible CRUD (create, retrieve, update, delete) operations…","fields":{"slug":"/put-vs-patch-in-restfull/"},"frontmatter":{"date":"2019-01-12","title":"PUT vs PATCH ?","category":"API","tags":["RESTfull"]}}}]}},"pageContext":{"tag":"RESTfull"}},
+    "staticQueryHashes": ["3649515864","3894061898"]}

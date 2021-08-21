@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-tag-tsx",
+    "path": "/tags/clean-code/",
+    "result": {"data":{"site":{"siteMetadata":{"title":"Chung Tran"}},"allMarkdownRemark":{"edges":[{"node":{"excerpt":"Lý do mình viết bài này xuất phát từ câu chuyện của bản thân.\nHồi mới ra trường, khi phỏng vấn ở công ty X, nhờ nắm 4 nguyên tắc này mà mình…","fields":{"slug":"/4-nguyen-tac-co-ban-trong-lap-trinh/"},"frontmatter":{"date":"2020-04-23","title":"4 nguyên tắc cơ bản trong lập trình mà LTV nào cũng phải biết","category":"Code","tags":["clean code"]}}}]}},"pageContext":{"tag":"clean code"}},
+    "staticQueryHashes": ["3649515864","3894061898"]}

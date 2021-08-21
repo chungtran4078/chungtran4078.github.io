@@ -1,1 +1,5 @@
-{"componentChunkName":"component---src-templates-category-js","path":"/categories/guide/","result":{"data":{"site":{"siteMetadata":{"title":"Chung Tran"}},"allMarkdownRemark":{"edges":[{"node":{"excerpt":"Cloudflare được biết đến là một dịch vụ DNS trung gian, giúp điều phối lưu lượng truy cập qua lớp bảo vệ CloudFlare. Các truy cập sẽ phải đi…","fields":{"slug":"/dns-domain-to-github-page-ssl-cloudflare/"},"frontmatter":{"date":"2019-01-05","title":"DNS domain về Github Page và thiết lập SSL free thông qua Cloudflare","category":"Guide"}}}]}},"pageContext":{"category":"Guide"}}}
+{
+    "componentChunkName": "component---src-templates-category-tsx",
+    "path": "/categories/guide/",
+    "result": {"data":{"site":{"siteMetadata":{"title":"Chung Tran"}},"allMarkdownRemark":{"edges":[{"node":{"excerpt":"Cloudflare được biết đến là một dịch vụ DNS trung gian, giúp điều phối lưu lượng truy cập qua lớp bảo vệ CloudFlare. Các truy cập sẽ phải đi…","fields":{"slug":"/dns-domain-to-github-page-ssl-cloudflare/"},"frontmatter":{"date":"2019-01-05","title":"DNS domain về Github Page và thiết lập SSL free thông qua Cloudflare","category":"Guide"}}}]}},"pageContext":{"category":"Guide"}},
+    "staticQueryHashes": ["3649515864","3894061898"]}

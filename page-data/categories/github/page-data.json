@@ -1,1 +1,5 @@
-{"componentChunkName":"component---src-templates-category-js","path":"/categories/github/","result":{"data":{"site":{"siteMetadata":{"title":"Chung Tran"}},"allMarkdownRemark":{"edges":[{"node":{"excerpt":"Việc đóng góp code cho một dự án trên Github còn gọi được gọi là Contribution 1. Fork dự án cần đóng góp code  Sau khi fork, trong danh sách…","fields":{"slug":"/contributor-project-github/"},"frontmatter":{"date":"2019-01-06","title":"Đóng góp code cho một dự án trên Github","category":"Github"}}}]}},"pageContext":{"category":"Github"}}}
+{
+    "componentChunkName": "component---src-templates-category-tsx",
+    "path": "/categories/github/",
+    "result": {"data":{"site":{"siteMetadata":{"title":"Chung Tran"}},"allMarkdownRemark":{"edges":[{"node":{"excerpt":"Việc đóng góp code cho một dự án trên Github còn gọi được gọi là Contribution 1. Fork dự án cần đóng góp code  Sau khi fork, trong danh sách…","fields":{"slug":"/contributor-project-github/"},"frontmatter":{"date":"2019-01-06","title":"Đóng góp code cho một dự án trên Github","category":"Github"}}}]}},"pageContext":{"category":"Github"}},
+    "staticQueryHashes": ["3649515864","3894061898"]}
