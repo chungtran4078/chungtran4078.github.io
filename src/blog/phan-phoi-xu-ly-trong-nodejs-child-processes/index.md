@@ -1,6 +1,6 @@
 ---
 draft: true
-title: Phân phối xử lý trong Nodejs - Child processes
+title: 'Phân phối xử lý trong Nodejs P1: Child processes'
 date: 2022-05-28
 category: Nodejs
 image: image.jpeg
@@ -12,14 +12,13 @@ tags:
 Như chúng ta đã biết Javascript trong Nodejs là single threading, tuy vậy khi cần xử lý nhiều việc trong cùng thời điểm thì Nodejs vẫn thực hiện tốt nhờ cơ chế non-blocking I/O cho phép các xử lý chạy bất đồng bộ mà không bị block lẫn nhau.
 
 Tuy nhiên ở 1 cuộc chơi mà có các tác vụ ngốn CPU thì mọi chuyện lại khác. Trong khi Java, Golang … thể hiện được ưu điểm vượt trội do có hỗ trợ multi threading và tận dụng tối đa tài nguyên máy chủ thì Nodejs với single threading tỏ ra yếu thế, tất nhiên rồi, 1 tay sao so được với 3 đầu sáu tay.
-
+![Child processes trong Nodejs](image.jpeg)
 Lấy ví dụ mình đang có bài toán:
 Mình có 2 API, 1 cái sẽ trả về số fibonacci ứng với vị trí và người dùng gửi lên và 1 cái trả về "Hello world". Code sẽ đơn giản như sau:
 
 __File: `server.js`__
 ```js
 const express = require("express")
-Copy
 const app = express()
 
 app.get("/greeting", (req, res) => {
@@ -137,6 +136,6 @@ Và ngay ngày hôm sau họ đã cho đào 1 nhánh kênh phụ rẽ ra từ nh
 
 ## FBI warning
 Việc giao tiếp giữa các process chỉ có thể giữa process cha và con, các process con không thể giao tiếp với nhau.<br/>
-Mỗi process được phân bổ bộ nhớ độc lập do đó chi phí cho process là lớn hơn nhiều so với thread (1 đơn vị trong process). Có thể xem bài này để hiểu rõ hơn về Process và Thread: [Difference between Process and Thread](https://www.geeksforgeeks.org/difference-between-process-and-thread/)
+Mỗi child process được phân bổ bộ nhớ độc lập do đó chi phí cho process là lớn hơn nhiều so với thread (1 đơn vị trong process). Có thể xem bài này để hiểu rõ hơn về Process và Thread: [Difference between Process and Thread](https://www.geeksforgeeks.org/difference-between-process-and-thread/)
 
 __Ô kê bài sau chúng ta sẽ sử dụng Worker threads để giải quyết bài toán trên.__
